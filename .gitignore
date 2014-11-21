@@ -7,13 +7,13 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-
+ipch/
 # Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
-
+*.sdf
 # =========================
 # Operating System Files
 # =========================
