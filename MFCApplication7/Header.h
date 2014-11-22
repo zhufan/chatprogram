@@ -9,7 +9,6 @@
 #include "MFCApplication7Dlg.h"
 #include "afxdialogex.h"
 #define PACKAGE_SIZE 220
-//朱凡
 class Dialogue     //对话类，用于保存两个客户端的对话内容以及记录对话对象
 {
 public:
