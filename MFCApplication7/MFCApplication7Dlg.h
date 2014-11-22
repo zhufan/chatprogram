@@ -46,16 +46,18 @@ private:
 	bool isConnected;         //表示当前协议下是否与服务器连接，初始值为false
 	List *dialogueList;        //会话列表
 	Dialogue *currentDialogue;  //当前会话
+	int local;                //本机编号
 public:
 	afx_msg void OnBnClickedButton();
 	afx_msg void OnClickedQuitButton();
 	afx_msg void OnClickedLinkButton();
 	afx_msg void OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult);
-	void notify(LPCTSTR info);     //显示系统通知
+	void notify(LPCTSTR info);     //显示系统通知，换行符要自己加
 	void sendmessage();        //发送信息
 	void changeProtocol();    //切换协议
 	void changeDialogue(int i);  //切换会话
-	void showContent(CEdit control, LPCTSTR content);  //在某个控件上显示内容
-	void addDialogue(int peer);    //增加一个会话标签，参数为对方客户端的编号
+	void showContent(Dialogue *dia, LPCTSTR content);  //在某个会话的内容显示框内显示内容
+	void addDialogue(int peer);    //增加一个会话，参数为对方客户端的编号
 	void deleteDialogue(int peer);  //删除一个会话，参数为对方客户端的编号
+	static DWORD recvfuc(LPVOID argu);  //接收线程函数
 };
